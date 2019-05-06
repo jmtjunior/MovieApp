@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap="http://phonegap.com/ns/1.0"
+        id="org.joseteixeira.movieapp"
+        version="1.0.0">
+
+    <name>
+        Movie App!
+    </name>
+
+    <description>
+        Movie App powered by TMDB. Mobile App that shows upcoming movies and search movies by title. 
+    </description>
+
+    <author href="http://joseteixeira.org" email="jmtjunior@hotmail.com">
+        José Márcio Teixeira Júnior
+    </author>
+
+    <icon src="images/movieIcon.png"/>
+</widget>
