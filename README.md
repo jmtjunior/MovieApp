@@ -12,7 +12,7 @@ Dependencies
 * AngularJs
 * jQuery (used by materialize components)
 
-Website hosted at http://movieapp.epizy.com/ for apreciation.
+Website hosted at http://movieapp.epizy.com/ for appreciation.
 * Best seen on mobile.
 
 Suggestions for further versions.
