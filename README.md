@@ -8,6 +8,7 @@ Architecture based on https://docs.angularjs.org/guide/concepts#
 
 Dependencies
 * Materialize (css)
+* fonts.googleapis
 * AngularJs
 * jQuery (used by materialize components)
 
