@@ -11,5 +11,4 @@ Dependencies
 * AngularJs
 * jQuery
 
-Host
-website hosted at http://movieapp.epizy.com/ for apreciation.
+Website hosted at http://movieapp.epizy.com/ for apreciation.
