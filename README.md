@@ -4,7 +4,7 @@ Movie App powered by TMDB. Mobile App that shows upcoming movies and search movi
 
 Architecture based on https://docs.angularjs.org/guide/concepts#
 
- * index.html(template) => controllerSearch.js(controller business UI logic) <=> movieService.js(service view reusable business logic) <=> Internet (https://api.themoviedb.org)
+ * index.html(template) => searchController.js(controller business UI logic) <=> movieService.js(service view reusable business logic) <=> Internet (https://api.themoviedb.org)
 
 Dependencies
 * Materialize (css)
