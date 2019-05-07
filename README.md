@@ -1,4 +1,4 @@
-# Movie app. Web application to be used on mobile. Version 1.0.0
+# Movie app. Web application for mobile. Version 1.0.0
 
 Movie App powered by TMDB. Mobile App that shows upcoming movies and search movies by title.
 
