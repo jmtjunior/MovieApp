@@ -13,6 +13,7 @@ Dependencies
 * jQuery (used by materialize components)
 
 Website hosted at http://movieapp.epizy.com/ for appreciation.
+* App Offline on movieapp.epizy.com due to the expiration date. Trying to reestablish the app in another host.
 * Best seen on mobile.
 
 Suggestions for further versions.
