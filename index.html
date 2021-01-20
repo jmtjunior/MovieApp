@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MovieApp"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+  <script src="js/services/movieService.js"></script>
+  <script src="js/controllers/searchController.js"></script>
+  <title>Movie App by TMDB</title>
+</head>
+<body>
+    <div ng-controller="searchController as model">
+        
+        <div class="topo-fixo z-depth-1">
+          <div class="valign-wrapper yellow darken-4 white-text">
+              <h5 class="titulo">Movie App powered by TMDB</h5>                   
+          </div>       
+        </div>
+        <div id="upcoming" class="section">
+          <!--Upcomimig movies pagination--> 
+          <div class="valign-wrapper blue darken-4 white-text">
+            <h6 class="titulo">Upcoming Movies</h6>  
+          </div>
+          <a ng-repeat="n in [].constructor(model.totalUpcomingPageResults) track by $index">
+              <button id="paginationButton$index+1" class="waves-effect" style="height:40px;width:40px" ng-click="model.loadUpcomingMovies($index+1)">{{ $index+1 }}</button>
+          </a>
+        </div>
+
+        <div id="search" class="section">
+            <div class="valign-wrapper blue darken-4 white-text">
+                <h6 class="titulo">Search</h6>  
+              </div>
+          <!--Search inputs-->
+          <input placeholder="Type a partial or full movie name here" ng-model="title" ng-keydown="$event.keyCode === 13 && model.searchMovieByTitle(1,title)" class="form-control/">
+          <button ng-click="model.searchMovieByTitle(1,title)" class="btn btn-primary btn-block">Search</button>
+          <!--Search movies pagination--> 
+          <div ng-if="model.totalSearchPageResults>0">
+            <a ng-repeat="n in [].constructor(model.totalSearchPageResults) track by $index">
+              <button id="paginationButton$index+1" class="waves-effect" style="height:40px;width:40px" ng-click="model.searchMovieByTitle($index+1,title)">{{ $index+1 }}</button>
+            </a>
+          </div>
+        </div>
+
+        <!--Returns a list of movies by search controller-->
+        <h6 class="titulo"><b>{{model.message}}</b></h6>
+        <div class="collection">
+          <div ng-repeat="movie in model.movies">   
+            <a class="collection-item  waves-effect modal-trigger" href="#movieDetails" ng-click="model.searchMovieById(movie.id)" class="collection-item"><span class="badge">Release date: {{movie.release_date}}</span>{{movie.title}}</a>                              
+          </div>
+        </div>
+
+        <!--Modal screen-->
+        <div id="movieDetails" class="modal modal-fixed-footer">
+          <div class="modal-content">              
+              <h4>{{model.movie.title}}</h4>                                        
+              <p>Release date: {{model.movie.release_date}}</p>
+              <img ng-src="https://image.tmdb.org/t/p/w220_and_h330_face/{{model.movie.poster_path}}" width="280px">
+              <p>
+                  <div ng-repeat="genre in model.movie.genres">
+                    <li>{{genre.name}}</li>
+                  </div>
+                </p>  
+              <p>{{model.movie.overview}}</p>                         
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close btn orange">Close</a>
+          </div>
+        </div>      
+      </div>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
+  </script>
+</body>
+</html>
